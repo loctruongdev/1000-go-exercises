@@ -63,6 +63,21 @@ func main() {
 	// exercises.MyStrings7() // passed
 	// exercises.MyStrings8() // * not passed: TrimRight(s, " ") not Trim
 
+	/*
+		const (
+			EST = -(5 + iota)
+			_
+			MST
+			PST
+		)
+
+		fmt.Println(EST, MST, PST)
+	*/
+
+	// exercises.MyIOTA1() //passed
+	// exercises.MyIOTA2() //passed
+	// exercises.MyIOTA3() //* passed
+
 }
 
 // func myFunc() {

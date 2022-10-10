@@ -805,3 +805,169 @@ func MyIOTA3() {
 
 	fmt.Println(Winter, Spring, Summer, Fall)
 }
+
+// ---------------------------------------------------------
+// EXERCISE: Print Your Age
+//
+//  Print your age using Printf
+//
+// EXPECTED OUTPUT
+//  I'm 30 years old.
+//
+// NOTE
+//  You should change 30 to your age, of course.
+// ---------------------------------------------------------
+
+func MyPrintf1() {
+	age := 30
+	fmt.Printf("I'm %d years old\n", age)
+}
+
+func MyPrintf1b() {
+	fmt.Printf("I'm %d years old\n", 35)
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Print Your Name and LastName
+//
+//  Print your name and lastname using Printf
+//
+// EXPECTED OUTPUT
+//  My name is Inanc and my lastname is Gumus.
+//
+// BONUS
+//  Store the formatting specifier (first argument of Printf)
+//    in a variable.
+//  Then pass it to printf
+// ---------------------------------------------------------
+
+func MyPrintf2() {
+	firstName, lastName := "Spring", "Truong"
+	fmt.Printf("My name is %s and my last name is %s\n.", firstName, lastName)
+}
+
+func MyPrintf2b() {
+	// fmt.Printf("My name is %s and my last name is %s\n.", "Spring", "Truong")
+
+	// BONUS
+	msg := "My name is %s and my last name is %s.\n"
+	fmt.Printf(msg, "Spring", "Truong")
+}
+
+// ---------------------------------------------------------
+// EXERCISE: False Claims
+//
+//  Use printf to print the expected output using a variable.
+//
+// EXPECTED OUTPUT
+//  These are false claims.
+// ---------------------------------------------------------
+
+func MyPrintf3() {
+	tf := false
+	fmt.Printf("These are %t claims.\n", tf)
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Print the Temperature
+//
+//  Print the current temperature in your area using Printf
+//
+// NOTE
+//  Do not use %v verb
+//  Output "shouldn't" be like 29.500000
+//
+// EXPECTED OUTPUT
+//  Temperature is 29.5 degrees.
+// ---------------------------------------------------------
+
+func MyPrintf4() {
+	temp := 29.5
+	fmt.Printf("Temperature is %.1f degrees.\n", temp)
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Double Quotes
+//
+//  Print "hello world" with double-quotes using Printf
+//  (As you see here)
+//
+// NOTE
+//  Output "shouldn't" be just: hello world
+//
+// EXPECTED OUTPUT
+//  "hello world"
+// ---------------------------------------------------------
+
+func MyPrintf5() {
+	s := "hello world"
+	fmt.Printf("%q\n", s)
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Print the Type
+//
+//  Print the type and value of 3 using fmt.Printf
+//
+// EXPECTED OUTPUT
+//  Type of 3 is int
+// ---------------------------------------------------------
+
+func MyPrintf6() {
+	fmt.Printf("Type of %d is %[1]T\n", 3)
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Print the Type #2
+//
+//  Print the type and value of 3.14 using fmt.Printf
+//
+// EXPECTED OUTPUT
+//  Type of 3.14 is float64
+// ---------------------------------------------------------
+
+func MyPrintf7() {
+	fmt.Printf("Type of %.2f is %[1]T\n", 3.14)
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Print the Type #3
+//
+//  Print the type and value of "hello" using fmt.Printf
+//
+// EXPECTED OUTPUT
+// 	Type of hello is string
+// ---------------------------------------------------------
+
+func MyPrintf8() {
+	fmt.Printf("Type of %s is %[1]T\n", "hello")
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Print the Type #4
+//  Print the type and value of true using fmt.Printf
+//
+// EXPECTED OUTPUT
+//  Type of true is bool
+// ---------------------------------------------------------
+
+func MyPrintf9() {
+	fmt.Printf("Type of %t is %[1]T\n", true)
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Print Your Fullname
+//
+//  1. Get your name and lastname from the command-line
+//  2. Print them using Printf
+//
+// EXAMPLE INPUT
+//  Inanc Gumus
+//
+// EXPECTED OUTPUT
+//  Your name is Inanc and your lastname is Gumus.
+// ---------------------------------------------------------
+
+func MyPrintf10() {
+	fmt.Printf("Your name is %s and your last name is %s.\n", os.Args[1], os.Args[2])
+}

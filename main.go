@@ -1,5 +1,7 @@
 package main
 
+import "1000go/exercises"
+
 func main() {
 
 	/*
@@ -77,6 +79,92 @@ func main() {
 	// exercises.MyIOTA1() //passed
 	// exercises.MyIOTA2() //passed
 	// exercises.MyIOTA3() //* passed
+
+	/*
+		var brand string = "Google"
+		fmt.Printf("%q\n", brand)
+		fmt.Printf("%s\n", brand)
+		fmt.Printf("%T\n", brand)
+		fmt.Printf("%v\n", brand)
+		fmt.Printf("%#v", brand)
+	*/
+
+	// Examples: PART I
+	/*
+		// I'm using multiple declarations instead of singular
+		var (
+			speed int
+			heat  float64
+			off   bool
+			brand string
+		)
+
+		fmt.Printf("%T\n", speed) // %T -> type
+		fmt.Printf("%T\n", heat)
+		fmt.Printf("%T\n", off)
+		fmt.Printf("%T\n", brand)
+	*/
+
+	// Examples: PART II
+
+	/*
+		var (
+			planet   = "venus"
+			distance = 261
+			orbital  = 224.701
+			hasLife  = false
+		)
+
+		// swiss army knife %v verb
+		// fmt.Printf("Planet: %v\n", planet)
+		// fmt.Printf("Distance: %v millions kms\n", distance)
+		// fmt.Printf("Orbital Period: %v days\n", orbital)
+		fmt.Printf("Does %v have life? %v\n", planet, hasLife)
+
+		// argument indexing - indexes start from 1
+		fmt.Printf(
+			"%v is %v away. Think! %[2]v kms! %[1]v OMG.\n",
+			planet, distance,
+		)
+
+		// why use other verbs than? because: type-safety
+		// uncomment to see the warnings:
+		//
+		// fmt.Printf("Planet: %d\n", planet)
+		// fmt.Printf("Distance: %s millions kms\n", distance)
+		// fmt.Printf("Orbital Period: %t days\n", orbital)
+		// fmt.Printf("Does %v has life? %f\n", planet, hasLife)
+		fmt.Printf("Planet: %s\n", planet)                    // ok
+		fmt.Printf("Distance: %d millions kms\n", distance)   //ok
+		fmt.Printf("Orbital Period: %v days\n", orbital)      // %f -> float
+		fmt.Printf("Does %v has life? %v\n", planet, hasLife) // %s | %t = true/false
+
+		// correct verbs:
+		fmt.Printf("Planet: %s\n", planet)
+		fmt.Printf("Distance: %d millions kms\n", distance)
+		fmt.Printf("Orbital Period: %f days\n", orbital)
+		fmt.Printf("Does %s has life? %t\n", planet, hasLife)
+
+		fmt.Println("====================")
+		// precision
+		fmt.Printf("Orbital Period: %f days\n", orbital) // orbital  = 224.701
+		fmt.Printf("Orbital Period: %.0f days\n", orbital)
+		fmt.Printf("Orbital Period: %.1f days\n", orbital)
+		fmt.Printf("Orbital Period: %.2f days\n", orbital)
+	*/
+
+	// exercises.MyPrintf1() // passed
+	// exercises.MyPrintf1b()
+	// exercises.MyPrintf2()
+	// exercises.MyPrintf2b() //* not pass:
+	// exercises.MyPrintf3() // passed
+	// exercises.MyPrintf4() // passed
+	// exercises.MyPrintf5() // passed
+	// exercises.MyPrintf6() // * not passed: use %[1]T
+	// exercises.MyPrintf7() // passed
+	// exercises.MyPrintf8() // passed
+	// exercises.MyPrintf9() // passed
+	exercises.MyPrintf10() // passed
 
 }
 

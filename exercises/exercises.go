@@ -971,3 +971,389 @@ func MyPrintf9() {
 func MyPrintf10() {
 	fmt.Printf("Your name is %s and your last name is %s.\n", os.Args[1], os.Args[2])
 }
+
+// ---------------------------------------------------------
+// EXERCISE: Age Seasons
+//
+//  Let's start simple. Print the expected outputs,
+//  depending on the age variable.
+//
+// EXPECTED OUTPUT
+//  If age is greater than 60, print:
+//    Getting older
+//  If age is greater than 30, print:
+//    Getting wiser
+//  If age is greater than 20, print:
+//    Adulthood
+//  If age is greater than 10, print:
+//    Young blood
+//  Otherwise, print:
+//    Booting up
+// ---------------------------------------------------------
+
+func MyIf1() {
+	age := 10
+	if age > 60 {
+		fmt.Println("Getting older")
+	} else if age > 30 {
+		fmt.Println("Getting wiser")
+	} else if age > 20 {
+		fmt.Println("Adulthood")
+	} else if age > 10 {
+		fmt.Println("Young blood")
+	} else {
+		fmt.Println("Booting up")
+	}
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Simplify It
+//
+//  Can you simplify the if statement inside the code below?
+//
+//  When:
+//    isSphere == true and
+//    radius is equal or greater than 200
+//
+//    It will print "It's a big sphere."
+//
+//    Otherwise, it will print "I don't know."
+//
+// EXPECTED OUTPUT
+//  It's a big sphere.
+// ---------------------------------------------------------
+
+func MyIf2a() {
+	// DO NOT TOUCH THIS
+	isSphere, radius := true, 200
+
+	var big bool
+
+	if radius >= 50 {
+		if radius >= 100 {
+			if radius >= 200 {
+				big = true
+			}
+		}
+	}
+
+	if big != true {
+		fmt.Println("I don't know.")
+	} else if !(isSphere == false) {
+		fmt.Println("It's a big sphere.")
+	} else {
+		fmt.Println("I don't know.")
+	}
+}
+
+func MyIf2b() {
+	// DO NOT TOUCH THIS
+	isSphere, radius := true, 200
+
+	if isSphere && radius >= 200 {
+		fmt.Println("It's a big sphere.")
+	} else {
+		fmt.Println("I don't know.")
+	}
+
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Arg Count
+//
+//  1. Get arguments from command-line.
+//  2. Print the expected outputs below depending on the number
+//     of arguments.
+//
+// EXPECTED OUTPUT
+//  go run main.go
+//    Give me args
+//
+//  go run main.go hello
+//    There is one: "hello"
+//
+//  go run main.go hi there
+//    There are two: "hi there"
+//
+//  go run main.go I wanna be a gopher
+//    There are 5 arguments
+// ---------------------------------------------------------
+
+func MyIf3() {
+	l := len(os.Args) - 1
+	if l == 0 {
+		fmt.Println("Give me args")
+	} else {
+		var msg string
+		for i := 1; i <= l; i++ {
+			msg = msg + os.Args[i] + ` `
+		}
+		fmt.Printf("There is %d argument(s): %s\n", l, msg)
+	}
+
+}
+
+func MyIf3b() {
+
+	args := []string{"minh", "loc"}
+	var msg string
+	for i := 0; i <= len(args)-1; i++ {
+		msg = msg + " " + args[i]
+	}
+	fmt.Printf("There is argument(s): %s\n", msg)
+
+}
+
+func MyIf3c() {
+	var (
+		args = os.Args
+		l    = len(args) - 1
+	)
+
+	if l == 0 {
+		fmt.Println("Give me args")
+	} else if l == 1 {
+		fmt.Printf("There is one: %q\n", args[1])
+	} else if l == 2 {
+		fmt.Printf(
+			`There are two: "%s %s"`+"\n",
+			args[1], args[2],
+		)
+	} else {
+		fmt.Printf("There are %d arguments\n", l)
+	}
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Vowel or Consonant
+//
+//  Detect whether a letter is vowel or consonant.
+//
+// NOTE
+//  y or w is called a semi-vowel.
+//  Check out: https://www.merriam-webster.com/words-at-play/why-y-is-sometimes-a-vowel-usage
+//  Check out: https://www.dictionary.com/e/w-vowel/
+//
+// HINT
+//  + You can find the length of an argument using the len function.
+//
+//  + len(os.Args[1]) will give you the length of the 1st argument.
+//
+// BONUS
+//  Use strings.IndexAny function to detect the vowels.
+//  Search on Google for: golang pkg strings IndexAny
+//
+// Furthermore, you can also use strings.ContainsAny. Check out: https://golang.org/pkg/strings/#ContainsAny
+//
+// EXPECTED OUTPUT
+//  go run main.go
+//    Give me a letter
+//
+//  go run main.go hey
+//    Give me a letter
+//
+//  go run main.go a
+//    "a" is a vowel.
+//
+//  go run main.go y
+//    "y" is sometimes a vowel, sometimes not.
+//
+//  go run main.go w
+//    "w" is sometimes a vowel, sometimes not.
+//
+//  go run main.go x
+//    "x" is a consonant.
+// ---------------------------------------------------------
+
+// len(os.Args) == 1 || len(os.Args) >2 -> Give me a letter
+// len(os.Args) == 2 -> IndexAny("aeiuo", os.Args[1]) -> os.Args[1] is a vowel |
+// IndexAny("yw", os.Args[1]) -> os.Args[1] is sometimes a vowel, sometimes not.
+// else: os.Args[1] is a consonant.
+
+func MyIf4() {
+	if len(os.Args) == 2 && len(os.Args[1]) == 1 {
+		c := strings.IndexAny("aeiuo", os.Args[1])
+		if c != -1 {
+			fmt.Printf("%q is a vowel.\n", os.Args[1])
+		} else {
+			c := strings.IndexAny("yw", os.Args[1])
+			if c != -1 {
+				fmt.Printf("%q is sometimes a vowel, sometimes not.\n", os.Args[1])
+			} else {
+				fmt.Printf("%q is a consonant.\n", os.Args[1])
+			}
+		}
+	} else {
+		fmt.Println("Give me a letter.")
+	}
+}
+
+func MyIf4b() {
+	args := os.Args
+
+	if len(args) != 2 || len(args[1]) != 1 {
+		fmt.Println("Give me a letter")
+		return
+	}
+
+	// I didn't use a short-if here because, it's already
+	// hard to read. Do not make it harder.
+
+	s := args[1]
+	if s == "a" || s == "e" || s == "i" || s == "o" || s == "u" {
+		fmt.Printf("%q is a vowel.\n", s)
+	} else if s == "w" || s == "y" {
+		fmt.Printf("%q is sometimes a vowel, sometimes not.\n", s)
+	} else {
+		fmt.Printf("%q is a consonant.\n", s)
+	}
+}
+
+func MyIf4c() {
+	args := os.Args
+
+	if len(args) != 2 || len(args[1]) != 1 {
+		fmt.Println("Give me a letter")
+		return
+	}
+
+	s := args[1]
+	if strings.IndexAny(s, "aeiou") != -1 {
+		fmt.Printf("%q is a vowel.\n", s)
+	} else if s == "w" || s == "y" {
+		fmt.Printf("%q is sometimes a vowel, sometimes not.\n", s)
+	} else {
+		fmt.Printf("%q is a consonant.\n", s)
+	}
+
+	// Notice that:
+	//
+	// I didn't use IndexAny for the else if above.
+	//
+	// It's because, calling a function is a costly operation.
+	// And, this way, the code is simpler.
+}
+
+// ---------------------------------------------------------
+// CHALLENGE #1
+//  Create a user/password protected program.
+//
+// EXAMPLE USER
+//  username: jack
+//  password: 1888
+//
+// EXPECTED OUTPUT
+//  go run main.go
+//    Usage: [username] [password]
+//
+//  go run main.go albert
+//    Usage: [username] [password]
+//
+//  go run main.go hacker 42
+//    Access denied for "hacker".
+//
+//  go run main.go jack 6475
+//    Invalid password for "jack".
+//
+//  go run main.go jack 1888
+//    Access granted to "jack".
+// ---------------------------------------------------------
+
+func MyIf5() {
+	if len(os.Args) == 3 {
+
+		u, p := os.Args[1], os.Args[2]
+		// password, _ := strconv.Atoi(os.Args[2])
+
+		if u == "jack" && p == "1888" {
+			fmt.Printf("Access granted to %q.\n", u)
+		} else if u == "jack" && p != "1888" {
+			fmt.Printf("Invalid password for %q.\n", u)
+		} else {
+			fmt.Printf("Access denied for %q.\n", u)
+		}
+	} else {
+		fmt.Println("Usage: [username] [password]")
+		return
+	}
+}
+
+func MyF5b() {
+	args := os.Args
+
+	if len(args) != 3 {
+		fmt.Println("Usage: [username] [password]")
+		return
+	}
+
+	u, p := args[1], args[2]
+
+	if u != "jack" {
+		fmt.Printf("Access denied for %q.\n", u)
+	} else if p != "1888" {
+		fmt.Printf("Invalid password for %q.\n", u)
+	} else {
+		fmt.Printf("Access granted to %q.\n", u)
+	}
+}
+
+// ---------------------------------------------------------
+// CHALLENGE #2
+//  Add one more user to the PassMe program below.
+//
+// EXAMPLE USERS
+//  username: jack
+//  password: 1888
+//
+//  username: inanc
+//  password: 1879
+//
+// EXPECTED OUTPUT
+//  go run main.go
+//    Usage: [username] [password]
+//
+//  go run main.go hacker 42
+//    Access denied for "hacker".
+//
+//  go run main.go jack 1888
+//    Access granted to "jack".
+//
+//  go run main.go inanc 1879
+//    Access granted to "inanc".
+//
+//  go run main.go jack 1879
+//    Invalid password for "jack".
+//
+//  go run main.go inanc 1888
+//    Invalid password for "inanc".
+// ---------------------------------------------------------
+
+const (
+	usage       = "Usage: [username] [password]"
+	errUser     = "Access denied for %q.\n"
+	errPwd      = "Invalid password for %q.\n"
+	accessOK    = "Access granted to %q.\n"
+	user, user2 = "jack", "inanc"
+	pass, pass2 = "1888", "1879"
+)
+
+func MyIf6() {
+	args := os.Args
+
+	if len(args) != 3 {
+		fmt.Println(usage)
+		return
+	}
+
+	u, p := os.Args[1], os.Args[2]
+
+	if u != user && u != user2 {
+		fmt.Printf(errUser, u)
+	} else if u == user && p == pass {
+		fmt.Printf(accessOK, u)
+	} else if u == user2 && p == pass2 {
+		fmt.Printf(accessOK, u)
+	} else {
+		fmt.Printf(errPwd, p)
+	}
+}

@@ -164,7 +164,32 @@ func main() {
 	// exercises.MyPrintf7() // passed
 	// exercises.MyPrintf8() // passed
 	// exercises.MyPrintf9() // passed
-	exercises.MyPrintf10() // passed
+	// exercises.MyPrintf10() // passed
+
+	/*
+		var on bool
+		on = !on
+		fmt.Println(on)
+
+		on = !!on
+		fmt.Println(on)
+	*/
+
+	// exercises.MyIf1()
+	// exercises.MyIf2a()
+	// exercises.MyIf2b()
+	// exercises.MyIf3()
+	// exercises.MyIf3b()
+	// exercises.MyIf3c()
+	// exercises.MyIf4()
+	// exercises.MyIf5()
+	// exercises.MyF5b()
+	exercises.MyIf6()
+
+	// fmt.Println(strings.IndexAny("aeiuo", os.Args[1]))
+	// fmt.Println(strings.IndexAny("aeiuo", "a"))
+	// fmt.Println(os.Args[1])
+	// // fmt.Println(strings.IndexAny("crwth", "aeiouy"))
 
 }
 

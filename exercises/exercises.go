@@ -1778,3 +1778,413 @@ func DaysofMonth2() {
 
 	fmt.Printf("%q has %d days.\n", month, days)
 }
+
+// ---------------------------------------------------------
+// STORY
+//  You're curious about the richter scales. When reporters
+//  say: "There's been a 5.5 magnitude earthquake",
+//
+//  You want to know what that means.
+//
+//  So, you've decided to write a program to do that for you.
+//
+// EXERCISE: Richter Scale
+//
+//  1. Get the earthquake magnitude from the command-line.
+//  2. Display its corresponding description.
+//
+// ---------------------------------------------------------
+// MAGNITUDE                    DESCRIPTION
+// ---------------------------------------------------------
+// Less than 2.0                micro
+// 2.0 and less than 3.0        very minor
+// 3.0 and less than 4.0        minor
+// 4.0 and less than 5.0        light
+// 5.0 and less than 6.0        moderate
+// 6.0 and less than 7.0        strong
+// 7.0 and less than 8.0        major
+// 8.0 and less than 10.0       great
+// 10.0 or more                 massive
+//
+// EXPECTED OUTPUT
+//  go run main.go
+//    Give me the magnitude of the earthquake.
+//
+//  go run main.go ABC
+//    I couldn't get that, sorry.
+//
+//  go run main.go 0.5
+//    0.50 is micro
+//
+//  go run main.go 2.5
+//    2.50 is very minor
+//
+//  go run main.go 3
+//    3.00 is minor
+//
+//  go run main.go 4.5
+//    4.50 is light
+//
+//  go run main.go 5
+//    5.00 is moderate
+//
+//  go run main.go 6
+//    6.00 is strong
+//
+//  go run main.go 7
+//    7.00 is major
+//
+//  go run main.go 8
+//    8.00 is great
+//
+//  go run main.go 11
+//    11.00 is massive
+// ---------------------------------------------------------
+
+func RichterScales() {
+	if len(os.Args) != 2 {
+		fmt.Println("Give me the magnitude of the earthquake.")
+		return
+	}
+
+	richter, err := strconv.ParseFloat(os.Args[1], 64)
+
+	if err != nil {
+		fmt.Println("I couldn't get that, sorry.")
+		return
+	}
+
+	var desc string
+
+	switch r := richter; {
+	case r < 2.0:
+		{
+			desc = "micro"
+		}
+	case r >= 2.0 && r < 3.0:
+		{
+			desc = "micro minor"
+		}
+	case r >= 3.0 && r < 4.0:
+		{
+			desc = "minor"
+		}
+	case r >= 4.0 && r < 5.0:
+		{
+			desc = "light"
+		}
+	case r >= 5.0 && r < 6.0:
+		{
+			desc = "moderate"
+		}
+	case r >= 6.0 && r < 7.0:
+		{
+			desc = "strong"
+		}
+	case r >= 5.0 && r < 6.0:
+		{
+			desc = "moderate"
+		}
+	case r >= 7.0 && r < 8.0:
+		{
+			desc = "major"
+		}
+	case r >= 8.0 && r < 10.0:
+		{
+			desc = "great"
+		}
+	case r >= 10:
+		{
+			desc = "massive"
+		}
+	default:
+		desc = "Give me the magnitude of the earthquake."
+
+	}
+
+	fmt.Printf("%.2f is %s.\n", richter, desc)
+
+}
+
+func RichterScales2() {
+
+	l := len(os.Args)
+	var r string
+
+	// if l == 2 {
+	// 	r = os.Args[1]
+	// } else if l == 3 {
+	// 	r = os.Args[1] + ` ` + os.Args[2]
+	// } else if l == 1 {
+	// 	fmt.Println("Tell me the magnitude of the earthquake in human terms.")
+	// 	r = "main"
+	// }
+
+	switch l {
+	case 1:
+		{
+			fmt.Println("Tell me the magnitude of the earthquake in human terms.")
+			r = "main"
+		}
+	case 2:
+		{
+			r = os.Args[1]
+		}
+	case 3:
+		{
+			r = os.Args[1] + ` ` + os.Args[2]
+		}
+	}
+
+	var scale string
+
+	switch r {
+
+	case "micro":
+		{
+			scale = "less than 2.0"
+		}
+	case "very minor":
+		{
+			scale = "2 - 2.9"
+		}
+	case "minor":
+		{
+			scale = "3 - 3.9"
+		}
+	case "light":
+		{
+			scale = "4 - 4.9"
+		}
+	case "moderate":
+		{
+			scale = "5 - 5.9"
+		}
+	case "strong":
+		{
+			scale = "6 - 6.9"
+		}
+	case "major":
+		{
+			scale = "7 - 7.9"
+		}
+	case "great":
+		{
+			scale = "8 - 8.9"
+		}
+	case "massive":
+		{
+			scale = "10+"
+		}
+	default:
+		scale = "unknown"
+
+	}
+	if r != "main" {
+		fmt.Printf("%s's richter scale is %s\n", r, scale)
+	}
+
+}
+
+func RichterScales2b() {
+	args := os.Args
+	if len(args) != 2 {
+		fmt.Println("Tell me the magnitude of the earthquake in human terms.")
+		return
+	}
+
+	var richter string
+
+	desc := args[1]
+
+	switch desc {
+	case "micro":
+		richter = "less than 2.0"
+	case "very minor":
+		richter = "2 - 2.9"
+	case "minor":
+		richter = "3 - 3.9"
+	case "light":
+		richter = "4 - 4.9"
+	case "moderate":
+		richter = "5 - 5.9"
+	case "strong":
+		richter = "6 - 6.9"
+	case "major":
+		richter = "7 - 7.9"
+	case "great":
+		richter = "8 - 9.9"
+	case "massive":
+		richter = "10+"
+	default:
+		richter = "unknown"
+	}
+
+	fmt.Printf(
+		"%s's richter scale is %s\n",
+		desc, richter,
+	)
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Convert
+//
+//  Convert the if statement to a switch statement.
+// ---------------------------------------------------------
+
+const (
+	usagex        = "Usage: [username] [password]"
+	errUserx      = "Access denied for %q.\n"
+	errPwdx       = "Invalid password for %q.\n"
+	accessOKx     = "Access granted to %q.\n"
+	userx, userx2 = "jack", "inanc"
+	passx, passx2 = "1888", "1879"
+)
+
+func UseIf() {
+	args := os.Args
+
+	if len(args) != 3 {
+		fmt.Println(usagex)
+		return
+	}
+
+	u, p := args[1], args[2]
+
+	//
+	// REFACTOR THIS TO A SWITCH
+	//
+	if u != userx && u != userx2 {
+		fmt.Printf(errUserx, u)
+	} else if u == userx && p == passx {
+		fmt.Printf(accessOKx, u)
+	} else if u == userx2 && p == passx2 {
+		fmt.Printf(accessOKx, u)
+	} else {
+		fmt.Printf(errPwdx, u)
+	}
+}
+
+func UseSwitch() {
+	args := os.Args
+
+	if len(args) != 3 {
+		fmt.Println(usagex)
+		return
+	}
+
+	u, p := args[1], args[2]
+
+	//
+	// REFACTOR THIS TO A SWITCH
+	//
+	switch {
+	case u != userx && u != userx2:
+		fmt.Printf(errUserx, u)
+	case u == userx && p == pass:
+		fallthrough
+
+	case u == userx2 && p == passx2:
+		fmt.Printf(accessOKx, u)
+	default:
+		fmt.Printf(errPwdx, u)
+	}
+
+	// if u != user && u != user2 {
+	// 	fmt.Printf(errUser, u)
+	// } else if u == user && p == pass {
+	// 	fmt.Printf(accessOK, u)
+	// } else if u == user2 && p == pass2 {
+	// 	fmt.Printf(accessOK, u)
+	// } else {
+	// 	fmt.Printf(errPwd, u)
+	// }
+}
+
+// ---------------------------------------------------------
+// STORY
+//  You want to write a program that will manipulate a
+//  given string to uppercase, lowercase, and title case.
+//
+// EXERCISE: String Manipulator
+//
+//  1. Get the operation as the first argument.
+//
+//  2. Get the string to be manipulated as the 2nd argument.
+//
+// HINT
+//  You can find the manipulation functions in the strings
+//  package Go documentation (ToLower, ToUpper, Title).
+//
+// EXPECTED OUTPUT
+//
+//  go run main.go
+//    [command] [string]
+//
+//    Available commands: lower, upper and title
+//
+//  go run main.go lower 'OMG!'
+//    omg!
+//
+//  go run main.go upper 'omg!'
+//    OMG!
+//
+//  go run main.go title "mr. charles darwin"
+//    Mr. Charles Darwin
+//
+//  go run main.go genius "mr. charles darwin"
+//    Unknown command: "genius"
+// ---------------------------------------------------------
+
+func MyConvert() {
+	if len(os.Args) != 3 {
+		fmt.Println("[command] [string]")
+		return
+	}
+
+	// arg := os.Args[1]
+	// str := os.Args[2]
+	cmd, str := os.Args[1], os.Args[2]
+
+	switch cmd {
+	case "lower":
+		fmt.Println(strings.ToLower(str))
+	case "upper":
+		fmt.Println(strings.ToUpper(str))
+	case "title":
+		fmt.Println(strings.Title(str))
+	default:
+		fmt.Printf("Unknown command: %q\n", cmd)
+	}
+
+}
+
+func MyConvert2() {
+	if len(os.Args) != 2 {
+		fmt.Println("Give me a month name")
+		return
+	}
+
+	year := time.Now().Year()
+	leap := year%4 == 0 && (year%100 != 0 || year%400 == 0)
+
+	days, month := 28, os.Args[1]
+
+	switch strings.ToLower(month) {
+	case "april", "june", "september", "november":
+		days = 30
+	case "january", "march", "may", "july", "august", "october", "december":
+		days = 31
+	case "february":
+		if leap {
+			days = 29
+		}
+	default:
+		fmt.Printf("%q is not a month.\n", month)
+		return // -> will not print next fmt.Printf
+
+	}
+
+	fmt.Printf("%q has %d days.\n", month, days)
+
+}

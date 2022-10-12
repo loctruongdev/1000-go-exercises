@@ -192,7 +192,60 @@ func main() {
 	// exercises.LeapYear()
 	// exercises.LeapYear2()
 	// exercises.LeapYear3()
-	exercises.DaysofMonth()
+	// exercises.DaysofMonth()
+
+	// exercises.RichterScales()
+	// exercises.RichterScales2()
+	// exercises.RichterScales2b()
+	// exercises.UseSwitch()
+	// exercises.MyConvert()
+	exercises.MyConvert2()
+	/*
+		city := os.Args[1]
+
+		switch city {
+		case "paris", "paris2":
+			{
+				fmt.Println("France")
+			}
+		case "tokyo":
+			{
+				fmt.Println("Japan")
+			}
+		default:
+			fmt.Println("Vietnam")
+		}
+	*/
+
+	/*
+
+		if len(os.Args) != 2 {
+			fmt.Println("Give me a month name.")
+			return
+		}
+
+		switch m := os.Args[1]; m {
+		case "Dec", "Jan", "Feb":
+			{
+				fmt.Println("Winter")
+			}
+		case "Mar", "Apr", "May":
+			{
+				fmt.Println("Spring")
+			}
+		case "Jun", "Jul", "Aug":
+			{
+				fmt.Println("Summer")
+			}
+		case "Sep", "Oct", "Nov":
+			{
+				fmt.Println("Fall")
+			}
+		default:
+			fmt.Printf("%q is not a month.\n", m)
+		}
+
+	*/
 
 	// fmt.Println(strings.IndexAny("aeiuo", os.Args[1]))
 	// fmt.Println(strings.IndexAny("aeiuo", "a"))
@@ -210,6 +263,6 @@ func main() {
 // 	e := strings.Repeat("!", utf8.RuneCountInString(s))
 // 	// fmt.Println(strings.ToUpper(s) + e)
 
-// 	fmt.Println(e + strings.ToUpper(s) + e)
+// 	fmt.Println(e + strin;gs.ToUpper(s) + e)
 
 // }

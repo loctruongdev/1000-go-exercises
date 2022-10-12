@@ -184,7 +184,15 @@ func main() {
 	// exercises.MyIf4()
 	// exercises.MyIf5()
 	// exercises.MyF5b()
-	exercises.MyIf6()
+	// exercises.MyIf6()
+
+	// exercises.FeettoMeters()
+	// exercises.MyErrHandling1()
+	// exercises.MyErrHandling2()
+	// exercises.LeapYear()
+	// exercises.LeapYear2()
+	// exercises.LeapYear3()
+	exercises.DaysofMonth()
 
 	// fmt.Println(strings.IndexAny("aeiuo", os.Args[1]))
 	// fmt.Println(strings.IndexAny("aeiuo", "a"))

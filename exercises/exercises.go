@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"os"
 	"path"
+	"strconv"
 	"strings"
+	"time"
 	"unicode/utf8"
 )
 
@@ -1356,4 +1358,423 @@ func MyIf6() {
 	} else {
 		fmt.Printf(errPwd, p)
 	}
+}
+
+//FEET TO METERs
+
+func FeettoMeters() {
+	arg := os.Args[1]
+	feet, err := strconv.ParseFloat(arg, 64)
+
+	if err != nil {
+		fmt.Printf("error: %q is not a number.\n", arg)
+		return
+	}
+
+	meter := feet * 0.3048
+	fmt.Printf("%g feet is %g meters.\n", feet, meter)
+
+}
+
+// ---------------------------------------------------------
+// STORY
+//
+//  Your boss wants you to create a program that will check
+//  whether a person can watch a particular movie or not.
+//
+//  Imagine that another program provides the age to your
+//  program. Depending on what you return, the other program
+//  will issue the tickets to the person automatically.
+//
+// EXERCISE: Movie Ratings
+//
+//  1. Get the age from the command-line.
+//
+//  2. Return one of the following messages if the age is:
+//     -> Above 17         : "R-Rated"
+//     -> Between 13 and 17: "PG-13"
+//     -> Below 13         : "PG-Rated"
+//
+// RESTRICTIONS:
+//  1. If age data is wrong or absent let the user know.
+//  2. Do not accept negative age.
+//
+// BONUS:
+//  1. BONUS: Use if statements only twice throughout your program.
+//  2. BONUS: Use an if statement only once.
+//
+// EXPECTED OUTPUT
+//  go run main.go 18
+//    R-Rated
+//
+//  go run main.go 17
+//    PG-13
+//
+//  go run main.go 12
+//    PG-Rated
+//
+//  go run main.go
+//    Requires age
+//
+//  go run main.go -5
+//    Wrong age: "-5"
+// ---------------------------------------------------------
+
+// age from the common-line -> os.Args
+// Requires age
+// Wrong age: "-5"
+// -> Above 17         : "R-Rated"
+//     -> Between 13 and 17: "PG-13"
+//     -> Below 13         : "PG-Rated"
+
+func MyErrHandling1() {
+	length := len(os.Args) - 1
+	if length != 1 {
+		fmt.Println("Requires age.")
+		return
+	}
+
+	age, err := strconv.Atoi(os.Args[1])
+
+	if err != nil || age < 0 {
+		fmt.Printf("Wrong age: %q.\n", os.Args[1])
+		return // -> exit error!
+	} else if age > 17 {
+		fmt.Println("R-Rated")
+	} else if age <= 17 && age >= 13 {
+		fmt.Println("PG-Rated")
+	} else {
+		fmt.Println("PG-13")
+	}
+
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Odd or Even
+//
+//  1. Get a number from the command-line.
+//
+//  2. Find whether the number is odd, even and divisible by 8.
+//
+// RESTRICTION
+//  Handle the error. If the number is not a valid number,
+//  or it's not provided, let the user know.
+//
+// EXPECTED OUTPUT
+//  go run main.go 16
+//    16 is an even number and it's divisible by 8
+//
+//  go run main.go 4
+//    4 is an even number
+//
+//  go run main.go 3
+//    3 is an odd number
+//
+//  go run main.go
+//    Pick a number
+//
+//  go run main.go ABC
+//    "ABC" is not a number
+// ---------------------------------------------------------
+
+// Pick a number
+// "ABC" is not a number
+// Even | Even & div 8 | Odd
+
+func MyErrHandling2() {
+	if len(os.Args) != 2 {
+		fmt.Println("Pick a number")
+		return
+	}
+
+	n, err := strconv.Atoi(os.Args[1])
+
+	if err != nil {
+		fmt.Printf("%q is not a number.\n", os.Args[1])
+		return
+	}
+
+	if n%8 == 0 {
+		fmt.Printf("%d is an even number and it's divisible by 8 \n", n)
+	} else if n%2 == 0 {
+		fmt.Printf("%d is an even number \n", n)
+	} else {
+		fmt.Printf("%d is an odd number \n", n)
+	}
+
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Leap Year
+//
+//  Find out whether a given year is a leap year or not.
+//
+// EXPECTED OUTPUT
+//  go run main.go
+//    Give me a year number
+//
+//  go run main.go eighties
+//    "eighties" is not a valid year.
+//
+//  go run main.go 2018
+//    2018 is not a leap year.
+//
+//  go run main.go 2100
+//    2100 is not a leap year.
+//
+//  go run main.go 2019
+//    2019 is not a leap year.
+//
+//  go run main.go 2020
+//    2020 is a leap year.
+//
+//  go run main.go 2024
+//    2024 is a leap year.
+// ---------------------------------------------------------
+
+func LeapYear() {
+
+	if len(os.Args) != 2 {
+		fmt.Println("Give me a year number")
+		return
+	}
+
+	y, err := strconv.Atoi(os.Args[1])
+
+	if err != nil {
+		fmt.Printf("%q is not a valid year.\n", os.Args[1])
+		return
+	}
+
+	if y%4 == 0 {
+		if y%100 == 0 {
+			if y%400 == 0 {
+				fmt.Printf("%d is a leap year.\n", y)
+			} else {
+				fmt.Printf("%d is NOT a leap year.\n", y)
+			}
+		} else {
+			fmt.Printf("%d is a leap year.\n", y)
+		}
+	} else {
+		fmt.Printf("%d is NOT a leap year.\n", y)
+	}
+}
+
+func LeapYear2() {
+	if len(os.Args) != 2 {
+		fmt.Println("Give me a year number")
+		return
+	}
+
+	year, err := strconv.Atoi(os.Args[1])
+	if err != nil {
+		fmt.Printf("%q is not a valid year.\n", os.Args[1])
+		return
+	}
+
+	var leap bool
+	if year%400 == 0 {
+		leap = true
+	} else if year%100 == 0 {
+		leap = false
+	} else if year%4 == 0 {
+		leap = true
+	}
+
+	if leap {
+		fmt.Printf("%d is a leap year.\n", year)
+	} else {
+		fmt.Printf("%d is not a leap year.\n", year)
+	}
+}
+
+func LeapYear3() {
+	if len(os.Args) != 2 {
+		fmt.Println("Give me a year number")
+		return
+	}
+
+	year, err := strconv.Atoi(os.Args[1])
+	if err != nil {
+		fmt.Printf("%q is not a valid year.\n", os.Args[1])
+		return
+	}
+
+	if year%4 == 0 && (year%100 != 0 || year%400 == 0) {
+		fmt.Printf("%d is a leap year.\n", year)
+	} else {
+		fmt.Printf("%d is not a leap year.\n", year)
+	}
+}
+
+// ---------------------------------------------------------
+// EXERCISE: Days in a Month
+//
+//  Print the number of days in a given month.
+//
+// RESTRICTIONS
+//  1. On a leap year, february should print 29. Otherwise, 28.
+//
+//     Set your computer clock to 2020 to see whether it works.
+//
+//  2. It should work case-insensitive. See below.
+//
+//     Search on Google: golang pkg strings ToLower
+//
+//  3. Get the current year using the time.Now()
+//
+//     Search on Google: golang pkg time now year
+//
+//
+// EXPECTED OUTPUT
+//
+//  -----------------------------------------
+//  Your solution should not accept invalid months
+//  -----------------------------------------
+//  go run main.go
+//    Give me a month name
+//
+//  go run main.go sheep
+//    "sheep" is not a month.
+//
+//  -----------------------------------------
+//  Your solution should handle the leap years
+//  -----------------------------------------
+//  go run main.go january
+//    "january" has 31 days.
+//
+//  go run main.go february
+//    "february" has 28 days.
+//
+//  go run main.go march
+//    "march" has 31 days.
+//
+//  go run main.go april
+//    "april" has 30 days.
+//
+//  go run main.go may
+//    "may" has 31 days.
+//
+//  go run main.go june
+//    "june" has 30 days.
+//
+//  go run main.go july
+//    "july" has 31 days.
+//
+//  go run main.go august
+//    "august" has 31 days.
+//
+//  go run main.go september
+//    "september" has 30 days.
+//
+//  go run main.go october
+//    "october" has 31 days.
+//
+//  go run main.go november
+//    "november" has 30 days.
+//
+//  go run main.go december
+//    "december" has 31 days.
+//
+//  -----------------------------------------
+//  Your solution should be case insensitive
+//  -----------------------------------------
+//  go run main.go DECEMBER
+//    "DECEMBER" has 31 days.
+//
+//  go run main.go dEcEmBeR
+//    "dEcEmBeR" has 31 days.
+// ---------------------------------------------------------
+
+func DaysofMonth() {
+
+	if len(os.Args) != 2 {
+		fmt.Println("Give me a month name")
+		return
+	}
+	// get the current year and find out whether it's a leap year
+	year := time.Now().Year()
+
+	var feb int
+
+	if year%4 == 0 && (year%100 != 0 || year%400 == 0) {
+		feb = 29
+	} else {
+		feb = 28
+	}
+
+	m := strings.ToLower(os.Args[1])
+
+	if m == "january" {
+		fmt.Printf("%q has 31 days.\n", os.Args[1])
+	} else if m == "february" {
+		fmt.Printf("%q has %d days.\n", os.Args[1], feb)
+	} else if m == "march" {
+		fmt.Printf("%q has 29 days.\n", os.Args[1])
+	} else if m == "april" {
+		fmt.Printf("%q has 30 days.\n", os.Args[1])
+	} else if m == "may" {
+		fmt.Printf("%q has 31 days.\n", os.Args[1])
+	} else if m == "june" {
+		fmt.Printf("%q has 30 days.\n", os.Args[1])
+	} else if m == "july" {
+		fmt.Printf("%q has 31 days.\n", os.Args[1])
+	} else if m == "august" {
+		fmt.Printf("%q has 31 days.\n", os.Args[1])
+	} else if m == "september" {
+		fmt.Printf("%q has 30 days.\n", os.Args[1])
+	} else if m == "october" {
+		fmt.Printf("%q has 31 days.\n", os.Args[1])
+	} else if m == "november" {
+		fmt.Printf("%q has 30 days.\n", os.Args[1])
+	} else if m == "december" {
+		fmt.Printf("%q has 31 days.\n", os.Args[1])
+	} else {
+		fmt.Printf("%q is not a month.\n", os.Args[1])
+	}
+
+}
+
+func DaysofMonth2() {
+	if len(os.Args) != 2 {
+		fmt.Println("Give me a month name")
+		return
+	}
+
+	// get the current year and find out whether it's a leap year
+	year := time.Now().Year()
+	leap := year%4 == 0 && (year%100 != 0 || year%400 == 0)
+
+	// setting it to 28, saves me typing it below again
+	days := 28
+
+	month := os.Args[1]
+
+	// case insensitive
+	if m := strings.ToLower(month); m == "april" ||
+		m == "june" ||
+		m == "september" ||
+		m == "november" {
+		days = 30
+	} else if m == "january" ||
+		m == "march" ||
+		m == "may" ||
+		m == "july" ||
+		m == "august" ||
+		m == "october" ||
+		m == "december" {
+		days = 31
+	} else if m == "february" {
+		// try a "logical and operator" above.
+		// like: `else if m == "february" && leap`
+		if leap {
+			days = 29
+		}
+	} else {
+		fmt.Printf("%q is not a month.\n", month)
+		return
+	}
+
+	fmt.Printf("%q has %d days.\n", month, days)
 }

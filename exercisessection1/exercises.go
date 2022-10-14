@@ -1,4 +1,4 @@
-package exercises
+package exercisessection1
 
 import (
 	"fmt"

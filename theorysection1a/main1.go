@@ -1,4 +1,4 @@
-package theory
+package theorysection1a
 
 import (
 	"1000go/theory"

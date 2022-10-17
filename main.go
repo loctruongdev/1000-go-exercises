@@ -1,8 +1,6 @@
 package main
 
-import (
-	exercisessection2 "1000go/exercisesection2"
-)
+import "1000go/exercisesection2b"
 
 const (
 	maxTurns = 5 // less is more difficult
@@ -21,6 +19,24 @@ func main() {
 	// exercisessection2.DoubleGuesses()
 	// exercisessection2.VerboseMode()
 	// exercisessection2.EnoughPicks()
-	exercisessection2.DynamicDiff()
+	// exercisessection2.DynamicDiff()
+	// exercisesection2b.WordFinder()
+	// exercisesection2b.CaseInsensitiveSearch()
+	// exercisesection2b.PathSearcher()
+	// exercisesection2b.PathSearcher2()
+	// exercisesection2b.CrunchPrimes()
+	exercisesection2b.CrunchPrimes2()
+
+	// for {
+	// switcher:
+	// 	switch 1 {
+	// 	case 1:
+	// 		switch 2 {
+	// 		case 2:
+	// 			break switcher
+	// 		}
+	// 	}
+	// 	break
+	// }
 
 }

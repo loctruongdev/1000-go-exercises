@@ -1,6 +1,35 @@
 package main
 
+import (
+	"1000go/section3"
+)
+
 func main() {
+
+	/*
+		moods := [...]string{
+			"sad",
+			"happy",
+			"terrible",
+			"awesome",
+		}
+		// fmt.Println(feelings)
+
+		arg := os.Args[1:]
+		fmt.Println(len(arg))
+
+		if len(arg) != 1 {
+			fmt.Println("Your Name")
+			return
+		}
+
+		name := arg[0]
+
+		rand.Seed(time.Now().UnixNano())
+		n := rand.Intn(len(moods))
+		fmt.Printf("%s feels %s\n", name, moods[n])
+	*/
+
 	// ★★★★★ SECTION 1 ★★★★★
 
 	// === VARIABLES EXERCISES ===
@@ -133,6 +162,14 @@ func main() {
 
 	// ★★★★★ SECTION 3 ★★★★★
 
-	// === xxx EXERCISES ===
+	// === ARRAYS EXERCISES ===
+	// section3.DeclareEmptyArrays()
+	// section3.GetSetArrayElements()
+	// section3.GetSetArrayElements()
+	// section3.RefactorArray()
+	// section3.RefactorEllipsis()
+	// section3.FixCode()
+	// section3.CompareArrays()
+	section3.AssignArrays()
 
 }

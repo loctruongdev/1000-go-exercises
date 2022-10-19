@@ -1,10 +1,41 @@
 package main
 
-import (
-	"1000go/section3"
-)
+import "1000go/section3"
 
 func main() {
+	/*
+		moods := [...][3]string{
+			{"good", "awesome", "happy"},
+			{"bad", "terrible", "worry"},
+		}
+		// fmt.Println(moods)
+
+		args := os.Args[1:]
+		if len(args) != 2 {
+			fmt.Println("[your name] [positive | negative]")
+			return
+		}
+
+		name, mood := args[0], args[1]
+
+		rand.Seed(time.Now().UnixNano())
+		n := rand.Intn(len(moods[0]))
+
+		// switch mood {
+		// case "positive":
+		// 	fmt.Printf("%s feels %s\n", name, moods[0][n])
+		// case "negative":
+		// 	fmt.Printf("%s feels %s\n", name, moods[1][n])
+		// }
+
+		// Alternative way
+		var mi int
+		if mood != "positive" {
+			mi = 1
+		}
+
+		fmt.Printf("%s feels %s\n", name, moods[mi][n])
+	*/
 
 	/*
 		moods := [...]string{
@@ -170,6 +201,17 @@ func main() {
 	// section3.RefactorEllipsis()
 	// section3.FixCode()
 	// section3.CompareArrays()
-	section3.AssignArrays()
+	// section3.AssignArrays()
+	// section3.WizardPrinter()
+	// section3.WizardPrinterb()
+	// section3.CurrencyConverter()
+	// section3.BookstoreSearchEngine()
+	// section3.BookstoreSearchEngineb()
+	// section3.FindAverage()
+	// section3.FindAverageb()
+	// section3.NumberSorter()
+	// section3.NumberSorter()
+	// section3.NumberSorterb()
+	section3.WordFinder()
 
 }

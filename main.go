@@ -1,8 +1,65 @@
 package main
 
-import "1000go/section3"
+import "1000go/retroclock"
 
 func main() {
+
+	/*
+
+		screen.Clear()
+
+		for {
+			screen.MoveTopLeft()
+
+			now := time.Now()
+			h, m, s := now.Hour(), now.Minute(), now.Second()
+			ss := now.Nanosecond() / 1e8
+
+			clock := [...]r.Placeholder{
+				r.Digits[h/10], r.Digits[h%10],
+				r.Separator,
+				r.Digits[m/10], r.Digits[m%10],
+				r.Separator,
+				r.Digits[s/10], r.Digits[s%10],
+				r.Dot,
+				r.Digits[ss],
+			}
+
+			// for line := range clock[0] {
+			// 	for i, digit := range clock {
+			// 		data := clock[i][line]
+			// 		if digit == r.Separator && s%2 == 0 {
+			// 			data = "   "
+			// 		}
+			// 		fmt.Printf(data + " ")
+
+			// 	}
+			// 	fmt.Println()
+			// }
+
+			// alarmed := s%10 == 0
+
+			for line := range clock[0] {
+				// if alarmed {
+				// 	clock = r.Alarm
+				// }
+
+				for index, digit := range clock {
+					next := clock[index][line]
+					if (digit == r.Separator || digit == r.Dot) && s%2 == 0 {
+						next = "   "
+					}
+					fmt.Print(next, "  ")
+				}
+				fmt.Println()
+			}
+
+			time.Sleep(time.Second / 10)
+
+		}
+
+	*/
+
 	/*
 		moods := [...][3]string{
 			{"good", "awesome", "happy"},
@@ -212,6 +269,8 @@ func main() {
 	// section3.NumberSorter()
 	// section3.NumberSorter()
 	// section3.NumberSorterb()
-	section3.WordFinder()
+	// section3.WordFinder()
+	// section3.RetroClock()
+	retroclock.Clock()
 
 }

@@ -1,8 +1,125 @@
 package main
 
-import "1000go/retroclock"
+import (
+	"1000go/section4"
+)
 
 func main() {
+	/*
+		var (
+			namesA []string
+		)
+
+		var namesB = []string{}
+
+		namesC := []string{}
+
+		namesD := make([]string, 0)
+
+		namesE := make([]string, 1)
+
+		fmt.Printf("namesA: %T %v %d %t\n", namesA, namesA, len(namesA), namesA == nil)
+		fmt.Printf("namesB: %T %v %d %t\n", namesB, namesB, len(namesB), namesB == nil)
+		fmt.Printf("namesB: %T %v %d %t\n", namesC, namesC, len(namesC), namesC == nil)
+		fmt.Printf("namesB: %T %v %d %t\n", namesD, namesD, len(namesD), namesD == nil)
+		fmt.Printf("namesB: %T %v %d %t\n", namesE, namesE, len(namesE), namesE == nil)
+
+	*/
+
+	/*
+		sliceA2 := append(sliceA, 4, 5, 6, 7)
+		fmt.Println("sliceA2: ", sliceA2)
+
+		// change value element 1
+		sliceA2[0] = 10
+
+		fmt.Println("sliceA2: ", sliceA2)
+
+		// Checking sliceA
+		fmt.Println("sliceA: ", sliceA) // wont effect
+	*/
+
+	// sliceA := make([]int, 0, 5)
+	// sliceA = append(sliceA, 1, 2, 3)
+	// fmt.Println("sliceA: ", sliceA)
+
+	// sliceB := append(sliceA, 4)
+	// fmt.Println("sliceB: ", sliceB)
+
+	// sliceB[0] = 10
+
+	// fmt.Println("sliceB: ", sliceB)
+	// fmt.Println("sliceA: ", sliceA)
+
+	// sliceB := append(sliceA, 3)
+	// fmt.Println(sliceB)
+
+	// sliceA := make([]int, 8)
+	// for i := 0; i < 8; i++ {
+	// 	sliceA[i] = i
+	// }
+	// fmt.Println(sliceA)
+	// fmt.Printf("length: %d cap %d\n", len(sliceA), cap(sliceA))
+
+	// sliceB := sliceA[0:4]
+	// fmt.Printf("length: %d cap %d\n", len(sliceB), cap(sliceB))
+
+	// for i := 0; i < 8; i++ {
+	// 	sliceB[i] = i
+	// }
+
+	// ages := []int{10, 20, 30}
+	// fmt.Println(ages)
+	// ages = ages[0:3]
+	// fmt.Println(ages)
+	// ages = ages[0:2]
+	// fmt.Println(ages)
+
+	// sliceA := []string{"one", "two", "three", "four", "five"}
+	// fmt.Println(sliceA)
+
+	// sliceA1 := sliceA[0:3]
+	// fmt.Println(sliceA1)
+
+	// sliceA1[0] = "1"
+	// fmt.Println(sliceA1)
+	// fmt.Println(sliceA)
+
+	// sliceA := []string{"one", "two", "three"}
+	// fmt.Println(sliceA)
+
+	// sliceB := []string{"4", "5", "6"}
+	// fmt.Println(sliceB)
+
+	// sliceC := append(sliceA, sliceB...)
+	// fmt.Println(sliceC)
+	// sliceC[0] = "NEW"
+	// fmt.Println(sliceC)
+	// fmt.Println(sliceA)
+
+	// sliceD := sliceC[2:4]
+	// fmt.Println(sliceD)
+
+	// sliceD[0] = "THREE"
+	// sliceD[1] = "FOUR"
+	// fmt.Println(sliceD)
+	// fmt.Println(sliceC)
+	// fmt.Println(sliceA)
+	// fmt.Println(sliceB)
+
+	// sliceB := append(sliceA, "four")
+	// fmt.Println(sliceA)
+	// fmt.Println(sliceB)
+
+	// SliceAcopy := sliceA
+	// SliceAcopy = append(SliceAcopy, "five", "six")
+	// fmt.Println(sliceA)
+	// fmt.Println(SliceAcopy)
+
+	// sliceC := append(sliceA, sliceB...)
+	// fmt.Println(sliceC)
+	// sliceCnew := sliceC[2:5]
+	// fmt.Println(sliceCnew)
 
 	/*
 
@@ -271,6 +388,17 @@ func main() {
 	// section3.NumberSorterb()
 	// section3.WordFinder()
 	// section3.RetroClock()
-	retroclock.Clock()
+	// retroclock.Clock()
+
+	// ★★★★★ SECTION 4 ★★★★★
+
+	// === SLICES EXERCISES ===
+	// section4.DeclareSlices()
+	// section4.DeclareSlicesb()
+	// section4.DeclareSlices2()
+	// section4.AssignSliceLiterals()
+	// section4.ArrayToSlice()
+	// section4.FixProblems()
+	section4.CompareSlices()
 
 }

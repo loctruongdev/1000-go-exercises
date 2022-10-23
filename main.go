@@ -399,6 +399,12 @@ func main() {
 	// section4.AssignSliceLiterals()
 	// section4.ArrayToSlice()
 	// section4.FixProblems()
-	section4.CompareSlices()
-
+	// section4.CompareSlices()
+	// section4.Append()
+	// section4.Append2()
+	// section4.Append3()
+	// section4.AppendAndSort()
+	// section4.HousingPrices()
+	section4.HousingPricesAverages()
+	// section4.HousingPricesAveragesb()
 }

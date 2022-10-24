@@ -408,6 +408,28 @@ func main() {
 	// section4.SliceNumbers()
 	// section4.SliceArgs()
 	// section4.SliceArgsb()
-	section4.SliceHousePrices()
+	// section4.SliceHousePrices()
 	// section4.PriceHousePricesDA()
+	// section4.FixBackingArray()
+	// section4.FixBackingArrayDA()
+	// section4.SortBackingArray()
+	// section4.ObserveMemoryAllocations()
+	// section4.ObserveLengthCapacity()
+	// section4.ObserveCapacityGrowth()
+	// section4.CorrectLyric()
+	section4.CorrectLyricDA()
+
+	// words := []string{"lucy", "in", "the", "sky", "with", "diamonds"}
+	// fmt.Printf("words1 %v\n", words)
+	// words = append(words[:1], "is", "everywhere")
+	// fmt.Printf("words2 %v\n", words)
+	// words = words[:6]
+	// fmt.Printf("words3 %v\n", words)
+	// words = append(words, words[len(words)+1:cap(words)]...)
+	// fmt.Printf("words3 %v\n", words)
+
+	// words := []string{1022: ""}
+	// fmt.Printf("len: %d cap: %d\n", len(words), cap(words))
+	// words = append(words, "boom!")
+	// fmt.Printf("len2: %d cap2: %d\n", len(words), cap(words))
 }

@@ -1,8 +1,6 @@
 package main
 
-import (
-	"1000go/section4"
-)
+import "1000go/section4"
 
 func main() {
 	/*
@@ -405,6 +403,11 @@ func main() {
 	// section4.Append3()
 	// section4.AppendAndSort()
 	// section4.HousingPrices()
-	section4.HousingPricesAverages()
+	// section4.HousingPricesAverages()
 	// section4.HousingPricesAveragesb()
+	// section4.SliceNumbers()
+	// section4.SliceArgs()
+	// section4.SliceArgsb()
+	section4.SliceHousePrices()
+	// section4.PriceHousePricesDA()
 }

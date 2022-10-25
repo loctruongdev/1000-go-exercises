@@ -1,6 +1,10 @@
 package main
 
-import "1000go/section4"
+import (
+	"1000go/section4"
+
+	s "github.com/inancgumus/prettyslice"
+)
 
 func main() {
 	/*
@@ -417,7 +421,13 @@ func main() {
 	// section4.ObserveLengthCapacity()
 	// section4.ObserveCapacityGrowth()
 	// section4.CorrectLyric()
-	section4.CorrectLyricDA()
+	// section4.CorrectLyricDA()
+	// section4.PracticeAdvanceSlice()
+	// section4.LimitBackingArraySharing()
+	// section4.FixMemoryLeak()
+	// section4.AddNewLineEachSentenceDA()
+	// section4.PrintDailyRequest()
+	section4.PrintDailyRequestDA()
 
 	// words := []string{"lucy", "in", "the", "sky", "with", "diamonds"}
 	// fmt.Printf("words1 %v\n", words)
@@ -432,4 +442,23 @@ func main() {
 	// fmt.Printf("len: %d cap: %d\n", len(words), cap(words))
 	// words = append(words, "boom!")
 	// fmt.Printf("len2: %d cap2: %d\n", len(words), cap(words))
+
+	// slice1 := make([]string, 3)
+	// s.Show("slice1 before append: ", slice1)
+	// slice1 = append(slice1, "one", "two")
+	// slice1 = slice1[:cap(slice1)]
+	// s.Show("slice1 after append: ", slice1)
+
+	// slice2 := make([]string, 0, 3)
+	// s.Show("slice2 before append: ", slice2)
+	// slice2 = append(slice2, "one", "two")
+	// slice2 = slice2[:cap(slice2)]
+	// s.Show("slice2 affter append: ", slice2)
+
+}
+
+func init() {
+	s.PrintBacking = true // prints the backing array
+	s.MaxPerLine = 10     // prints 10 slice elements per line
+	s.Width = 60          // prints 60 character per line
 }

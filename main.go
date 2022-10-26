@@ -1,7 +1,7 @@
 package main
 
 import (
-	"1000go/section4"
+	"1000go/section6"
 
 	s "github.com/inancgumus/prettyslice"
 )
@@ -427,7 +427,11 @@ func main() {
 	// section4.FixMemoryLeak()
 	// section4.AddNewLineEachSentenceDA()
 	// section4.PrintDailyRequest()
-	section4.PrintDailyRequestDA()
+	// section4.PrintDailyRequestDA()
+	// section6.SortWriteFfile()
+	// section6.SortWriteFfile2()
+	section6.FindWriteSubdirectoriesToFile()
+	// section6.FindWriteSubdirectoriesToFileDA()
 
 	// words := []string{"lucy", "in", "the", "sky", "with", "diamonds"}
 	// fmt.Printf("words1 %v\n", words)

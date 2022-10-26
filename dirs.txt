@@ -1,0 +1,3 @@
+dir/subdir1/
+	demo.txt/
+

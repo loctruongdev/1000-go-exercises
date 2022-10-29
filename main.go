@@ -1,7 +1,7 @@
 package main
 
 import (
-	"1000go/section6"
+	"1000go/section8"
 
 	s "github.com/inancgumus/prettyslice"
 )
@@ -430,8 +430,70 @@ func main() {
 	// section4.PrintDailyRequestDA()
 	// section6.SortWriteFfile()
 	// section6.SortWriteFfile2()
-	section6.FindWriteSubdirectoriesToFile()
+	// section6.FindWriteSubdirectoriesToFile()
 	// section6.FindWriteSubdirectoriesToFileDA()
+
+	// section7.BouncingBall()
+	// section7.BouncingBallDA()
+	// section7.BouncingBallEx1()
+	// section7.BouncingBallEx2()
+	// section7.BouncingBallEx2DA()
+	// section7.BouncingBallEx3()
+	// section7.BouncingBallEx4DA()
+	// section7.BouncingBallEx5DA()
+	// section8.ConvertStrings()
+	// section8.PrintRunes()
+	// section8.RuneManipulator()
+	section8.RuneManipulatorDA()
+
+	/*
+	   str := "hello"
+	   		fmt.Println(str[:2])
+	   		rstr := []rune(str)
+	   		fmt.Println(rstr[:2])
+	   		fmt.Println(string(rstr[:2]))
+	*/
+
+	// text := "le café"
+	// for i := range text {
+	// 	fmt.Printf("%d\n", i)
+	// }
+
+	// for i := 0; i < len(text); {
+	// 	r, size := utf8.DecodeRuneInString(text[i:])
+	// 	fmt.Printf("%c", r) // print rune instead byte = decoding
+	// 	// fmt.Println(size)
+	// 	i += size
+	// }
+	// fmt.Println()
+
+	// str := "Spring"
+	// // fmt.Printf("%s\n", str)
+	// // fmt.Println(len(str))
+	// s.Show("str before", str)
+
+	// // Convert string to []byte
+	// bytes := []byte("Spring") // dont' share backing-array
+	// // fmt.Printf("%s\n", string(bytes))
+	// // fmt.Println(len(bytes))
+	// s.Show("bytes", bytes)
+
+	// // bytes[0] = 'N'
+	// // bytes[1] = 'O'
+	// // fmt.Printf("%s\n", string(bytes))
+
+	// // convert []byte to string
+	// str = string(bytes)
+	// s.Show("str after", str)
+
+	// Clear all the characters on the screen
+
+	// for {
+	// 	w, h := screen.Size()
+
+	// 	fmt.Printf("Width: %d Height: %d\n", w, h)
+
+	// }
 
 	// words := []string{"lucy", "in", "the", "sky", "with", "diamonds"}
 	// fmt.Printf("words1 %v\n", words)

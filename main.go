@@ -1,8 +1,6 @@
 package main
 
 import (
-	"1000go/wrapper"
-
 	s "github.com/inancgumus/prettyslice"
 )
 
@@ -446,8 +444,12 @@ func main() {
 	// section8.RuneManipulator()
 	// section8.RuneManipulatorDA()
 	// masker.Masker()
-	wrapper.Wrapper()
+	// wrapper.Wrapper()
 	// wrapper.WrapperDA()
+	// section10.Warmup()
+	// section10.PopulateLookup()
+	// section10.Students()
+	// section10.StudentsDA()
 
 	/*
 	   str := "hello"

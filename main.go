@@ -1,6 +1,8 @@
 package main
 
 import (
+	"1000go/section11"
+
 	s "github.com/inancgumus/prettyslice"
 )
 
@@ -450,6 +452,13 @@ func main() {
 	// section10.PopulateLookup()
 	// section10.Students()
 	// section10.StudentsDA()
+
+	// logs.Logs()
+	// logs.LogsB()
+	// section11.Uppercaser()
+	// section11.UniqueWords()
+	// section11.UniqueWordsDA()
+	section11.UniqueWords2()
 
 	/*
 	   str := "hello"

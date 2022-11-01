@@ -1,7 +1,7 @@
 package main
 
 import (
-	"1000go/section11"
+	"1000go/section12"
 
 	s "github.com/inancgumus/prettyslice"
 )
@@ -458,7 +458,13 @@ func main() {
 	// section11.Uppercaser()
 	// section11.UniqueWords()
 	// section11.UniqueWordsDA()
-	section11.UniqueWords2()
+	// section11.UniqueWords2()
+
+	// section12.Warmup()
+	// section12.List()
+	// section12.QueryById()
+	// section12.Encode()
+	section12.DecodeDA()
 
 	/*
 	   str := "hello"
